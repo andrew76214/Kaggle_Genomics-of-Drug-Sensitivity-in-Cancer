@@ -10,8 +10,7 @@ from skorch import NeuralNetRegressor
 from sklearn.model_selection import GridSearchCV
 
 class DataLoader:
-    
-    # Usage example:
+        # Usage example:
     # dataloader = DataLoader('./genomics-of-drug-sensitivity-in-cancer-gdsc/GDSC_DATASET.csv',
     #                         './genomics-of-drug-sensitivity-in-cancer-gdsc/Compounds-annotation.csv',
     #                         './genomics-of-drug-sensitivity-in-cancer-gdsc/GDSC2-dataset.csv',
@@ -195,7 +194,7 @@ class CNNTransformer(nn.Module):
 
   
 class CNNTransformer_Tuner:
-    def __init__(self, input_dim, cnn_filters, transformer_dim, nhead, num_layers, seq_len, model_class=CNNTransformer):
+    def __init__(self, input_dim, cnn_filters=64, transformer_dim=256, nhead=8, num_layers=3, seq_len=1291, model_class=CNNTransformer):
         self.input_dim = input_dim
         self.cnn_filters = cnn_filters
         self.transformer_dim = transformer_dim
@@ -214,7 +213,7 @@ class CNNTransformer_Tuner:
             criterion=nn.MSELoss,
             optimizer=optim.Adam,
             max_epochs=30,
-            batch_size=128,
+            batch_size=512,
             iterator_train__shuffle=True,
             train_split=None,
             verbose=1,
