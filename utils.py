@@ -170,14 +170,13 @@ class CNNTransformer(nn.Module):
 
         self.pool = nn.MaxPool1d(kernel_size=2, stride=2)
 
-        transformer_seq_len = max(seq_len // 2, 1)  # Prevent seq_len from being too small
         self.input_layer = nn.Linear(cnn_filters * 2, transformer_dim)
         encoder_layer = nn.TransformerEncoderLayer(d_model=transformer_dim, nhead=nhead, dim_feedforward=transformer_dim * 4)
         self.transformer_encoder = nn.TransformerEncoder(encoder_layer, num_layers=num_layers)
 
         self.fc = nn.Linear(transformer_dim, 1)
 
-    def forward(self, x):
+    '''def forward(self, x):
         x = x.permute(0, 2, 1)
         x = self.dropout(self.relu(self.bn1(self.conv1(x))))
         x = self.dropout(self.relu(self.bn2(self.conv2(x))))
@@ -190,7 +189,40 @@ class CNNTransformer(nn.Module):
         x_mean = x.mean(dim=1)
         x_output = self.fc(x_mean)
 
-        return x_output  
+        return x_output'''
+    def forward(self, x):
+        # Ensure input has the right shape
+        if x.dim() == 2:  # Add sequence dimension if missing
+            x = x.unsqueeze(1)  # [batch_size, 1, input_dim]
+
+        # Conv1d expects [batch_size, input_channels, seq_len]
+        x = x.permute(0, 2, 1)  # [batch_size, input_dim, seq_len]
+
+        # Convolutional layers
+        x = self.dropout(self.relu(self.bn1(self.conv1(x))))
+        x = self.dropout(self.relu(self.bn2(self.conv2(x))))
+        x = self.dropout(self.relu(self.bn3(self.conv3(x))))
+
+        # Permute back for transformer
+        x = x.permute(0, 2, 1)  # [batch_size, seq_len, cnn_filters*2]
+
+        # Linear layer to match transformer input dim
+        x = self.input_layer(x)  # [batch_size, seq_len, transformer_dim]
+
+        # Transformer expects [seq_len, batch_size, embed_dim]
+        x = x.permute(1, 0, 2)  # [seq_len, batch_size, transformer_dim]
+
+        # Transformer encoder
+        x = self.transformer_encoder(x)
+
+        # Mean pooling over sequence length
+        x_mean = x.mean(dim=0)  # [batch_size, transformer_dim]
+
+        # Final fully connected layer
+        x_output = self.fc(x_mean)
+
+        return x_output
+
 
   
 class CNNTransformer_Tuner:
@@ -213,7 +245,7 @@ class CNNTransformer_Tuner:
             criterion=nn.MSELoss,
             optimizer=optim.Adam,
             max_epochs=30,
-            batch_size=512,
+            batch_size=256,
             iterator_train__shuffle=True,
             train_split=None,
             verbose=1,
