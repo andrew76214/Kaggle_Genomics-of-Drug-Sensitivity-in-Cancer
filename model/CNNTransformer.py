@@ -103,12 +103,12 @@ class CNNTransformer_Tuner:
     def tune_hyperparameters(self, X, y):
         # Define hyperparameter grid
         param_grid = {
-            'lr': [0.01, 0.001, 0.0001],
+            'lr': [0.01, 0.001],
             'optimizer__weight_decay': [0.0001, 0.001],
             'module__cnn_filters': [32, 64, 128],
             'module__transformer_dim': [64, 128, 256],
-            'module__nhead': [2, 4, 8],
-            'module__num_layers': [1, 2, 3],
+            'module__nhead': [2, 4],
+            'module__num_layers': [1, 2],
         }
 
         # Use GridSearchCV to find the best hyperparameters

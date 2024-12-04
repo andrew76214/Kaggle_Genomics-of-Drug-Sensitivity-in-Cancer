@@ -1,3 +1,6 @@
+import warnings 
+warnings.filterwarnings('ignore')
+
 import torch
 import pandas as pd
 from sklearn.model_selection import train_test_split
@@ -27,6 +30,11 @@ class DataLoader:
         self.X_test = None
         self.y_train = None
         self.y_test = None
+        
+        self.load_data()
+        self.preprocess_data()
+        self.define_features_and_target()
+        self.Convert_to_tensors()
 
     def load_data(self):
         # Load the datasets
