@@ -6,14 +6,11 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 
 class DataLoader:
-        # Usage example:
+    # Usage example:
     # dataloader = DataLoader('./genomics-of-drug-sensitivity-in-cancer-gdsc/GDSC_DATASET.csv',
     #                         './genomics-of-drug-sensitivity-in-cancer-gdsc/Compounds-annotation.csv',
     #                         './genomics-of-drug-sensitivity-in-cancer-gdsc/GDSC2-dataset.csv',
     #                         './genomics-of-drug-sensitivity-in-cancer-gdsc/Cell_Lines_Details.xlsx')
-    # dataloader.load_data()
-    # dataloader.preprocess_data()
-    # dataloader.define_features_and_target()
     # X_train, X_test, y_train, y_test = dataloader.get_data()
     
     def __init__(self, gdsc_path, compounds_path, gdsc2_path, cell_lines_path):
@@ -34,7 +31,6 @@ class DataLoader:
         self.load_data()
         self.preprocess_data()
         self.define_features_and_target()
-        self.Convert_to_tensors()
 
     def load_data(self):
         # Load the datasets
@@ -42,6 +38,7 @@ class DataLoader:
         self.compounds_annotation = pd.read_csv(self.compounds_path)
         self.gdsc2_dataset = pd.read_csv(self.gdsc2_path)
         self.cell_lines_details = pd.read_excel(self.cell_lines_path)
+        print('Loading Done!')
 
     def preprocess_data(self):
         # Drop rows with missing values for simplicity
@@ -55,6 +52,7 @@ class DataLoader:
 
         # Merge the resulting dataframe with Compounds Annotation on DRUG_ID
         self.final_df = pd.merge(merged_df, self.compounds_annotation, on='DRUG_ID', how='left')
+        print('Preprocess Done!')
 
     def define_features_and_target(self):
         # Define features and target variable
@@ -90,8 +88,9 @@ class DataLoader:
 
         # Split the data into training and testing sets
         self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+        print('Define Done!')
 
-    def Convert_to_tensors(self):
+    def get_data(self):
         
         input_dim = self.X_train.shape[1]
         

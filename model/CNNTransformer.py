@@ -1,3 +1,6 @@
+import warnings 
+warnings.filterwarnings('ignore')
+
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -96,19 +99,28 @@ class CNNTransformer_Tuner:
             batch_size=512,
             iterator_train__shuffle=True,
             train_split=None,
-            verbose=0,
+            verbose=1,
             device='cuda' if torch.cuda.is_available() else 'cpu'  # Use GPU if available
         )
 
     def tune_hyperparameters(self, X, y):
         # Define hyperparameter grid
-        param_grid = {
+        '''param_grid = {
             'lr': [0.01, 0.001],
             'optimizer__weight_decay': [0.0001, 0.001],
             'module__cnn_filters': [32, 64, 128],
             'module__transformer_dim': [64, 128, 256],
             'module__nhead': [2, 4],
             'module__num_layers': [1, 2],
+        }'''
+        
+        param_grid = {
+            'lr': [0.01],
+            'optimizer__weight_decay': [0.001],
+            'module__cnn_filters': [32],
+            'module__transformer_dim': [64],
+            'module__nhead': [2],
+            'module__num_layers': [1],
         }
 
         # Use GridSearchCV to find the best hyperparameters
