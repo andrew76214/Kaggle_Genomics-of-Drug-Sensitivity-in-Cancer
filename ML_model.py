@@ -30,7 +30,7 @@ class XGBRegressor_Tuner:
         }
         
         # Use GridSearchCV to find the best hyperparameters
-        gs = GridSearchCV(self.model, param_grid, refit=True, cv=3, scoring='neg_mean_squared_error', n_jobs=-1)
+        gs = GridSearchCV(self.model, param_grid, refit=True, cv=3, scoring='neg_mean_squared_error')
         gs.fit(X, y)
         
         # Print best parameters and score
@@ -56,7 +56,7 @@ class SVR_Tuner:
         }
         
         # Use GridSearchCV to find the best hyperparameters
-        gs = GridSearchCV(self.model, param_grid, refit=True, cv=3, scoring='neg_mean_squared_error', n_jobs=-1)
+        gs = GridSearchCV(self.model, param_grid, refit=True, cv=3, scoring='neg_mean_squared_error')
         gs.fit(X, y)
         
         # Print best parameters and score
@@ -80,7 +80,7 @@ class Ridge_Tuner:
         }
         
         # Use GridSearchCV to find the best hyperparameters
-        gs = GridSearchCV(self.model, param_grid, refit=True, cv=3, scoring='neg_mean_squared_error', n_jobs=-1)
+        gs = GridSearchCV(self.model, param_grid, refit=True, cv=3, scoring='neg_mean_squared_error')
         gs.fit(X, y)
         
         # Print best parameters and score
@@ -106,7 +106,7 @@ class RF_Tuner:
         }
         
         # Use GridSearchCV to find the best hyperparameters
-        gs = GridSearchCV(self.model, param_grid, refit=True, cv=3, scoring='neg_mean_squared_error', n_jobs=-1)
+        gs = GridSearchCV(self.model, param_grid, refit=True, cv=3, scoring='neg_mean_squared_error')
         gs.fit(X, y)
         
         # Print best parameters and score
@@ -130,7 +130,7 @@ class LinearRegression_Tuner:
         }
         
         # Use GridSearchCV to find the best hyperparameters
-        gs = GridSearchCV(self.model, param_grid, refit=True, cv=3, scoring='neg_mean_squared_error', n_jobs=-1)
+        gs = GridSearchCV(self.model, param_grid, refit=True, cv=3, scoring='neg_mean_squared_error')
         gs.fit(X, y)
         
         # Print best parameters and score
@@ -156,7 +156,7 @@ class LGBM_Tuner:
         }
         
         # Use GridSearchCV to find the best hyperparameters
-        gs = GridSearchCV(self.model, param_grid, refit=True, cv=3, scoring='neg_mean_squared_error', n_jobs=-1)
+        gs = GridSearchCV(self.model, param_grid, refit=True, cv=3, scoring='neg_mean_squared_error')
         gs.fit(X, y)
         
         # Print best parameters and score
@@ -180,7 +180,7 @@ class Lasso_Tuner:
         }
         
         # Use GridSearchCV to find the best hyperparameters
-        gs = GridSearchCV(self.model, param_grid, refit=True, cv=3, scoring='neg_mean_squared_error', n_jobs=-1)
+        gs = GridSearchCV(self.model, param_grid, refit=True, cv=3, scoring='neg_mean_squared_error')
         gs.fit(X, y)
         
         # Print best parameters and score
@@ -206,7 +206,7 @@ class KNN_Tuner:
         }
         
         # Use GridSearchCV to find the best hyperparameters
-        gs = GridSearchCV(self.model, param_grid, refit=True, cv=3, scoring='neg_mean_squared_error', n_jobs=-1)
+        gs = GridSearchCV(self.model, param_grid, refit=True, cv=3, scoring='neg_mean_squared_error')
         gs.fit(X, y)
         
         # Print best parameters and score
@@ -232,7 +232,7 @@ class HistGradientBoosting_Tuner:
         }
         
         # Use GridSearchCV to find the best hyperparameters
-        gs = GridSearchCV(self.model, param_grid, refit=True, cv=3, scoring='neg_mean_squared_error', n_jobs=-1)
+        gs = GridSearchCV(self.model, param_grid, refit=True, cv=3, scoring='neg_mean_squared_error')
         gs.fit(X, y)
         
         # Print best parameters and score
@@ -257,7 +257,7 @@ class ElasticNet_Tuner:
         }
         
         # Use GridSearchCV to find the best hyperparameters
-        gs = GridSearchCV(self.model, param_grid, refit=True, cv=3, scoring='neg_mean_squared_error', n_jobs=-1)
+        gs = GridSearchCV(self.model, param_grid, refit=True, cv=3, scoring='neg_mean_squared_error')
         gs.fit(X, y)
         
         # Print best parameters and score
@@ -283,7 +283,7 @@ class CatBoost_Tuner:
         }
         
         # Use GridSearchCV to find the best hyperparameters
-        gs = GridSearchCV(self.model, param_grid, refit=True, cv=3, scoring='neg_mean_squared_error', n_jobs=-1)
+        gs = GridSearchCV(self.model, param_grid, refit=True, cv=3, scoring='neg_mean_squared_error')
         gs.fit(X, y)
         
         # Print best parameters and score
@@ -309,7 +309,7 @@ class DecisionTree_Tuner:
         }
         
         # Use GridSearchCV to find the best hyperparameters
-        gs = GridSearchCV(self.model, param_grid, refit=True, cv=3, scoring='neg_mean_squared_error', n_jobs=-1)
+        gs = GridSearchCV(self.model, param_grid, refit=True, cv=3, scoring='neg_mean_squared_error')
         gs.fit(X, y)
         
         # Print best parameters and score
