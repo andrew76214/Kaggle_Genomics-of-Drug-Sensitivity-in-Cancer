@@ -37,7 +37,7 @@ class MLP_Tuner:
             batch_size=128,
             iterator_train__shuffle=True,
             train_split=None,
-            verbose=1,
+            verbose=0,
             device='cuda' if torch.cuda.is_available() else 'cpu'  # Use GPU if available
         )
         
