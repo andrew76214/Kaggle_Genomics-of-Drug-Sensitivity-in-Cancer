@@ -15,9 +15,10 @@ from sklearn.neighbors import KNeighborsRegressor
 
 # Wrapper for XGBoost
 class XGBRegressor_Tuner:
-    def __init__(self):
+    def __init__(self, input_dim):
         # Instantiate the XGBoost Regressor model
         self.model = xgb.XGBRegressor(objective='reg:squarederror')
+        self.input_dim = input_dim
         
     def tune_hyperparameters(self, X, y):
         # Define hyperparameter grid
@@ -30,7 +31,7 @@ class XGBRegressor_Tuner:
         }
         
         # Use GridSearchCV to find the best hyperparameters
-        gs = GridSearchCV(self.model, param_grid, refit=True, cv=3, scoring='neg_mean_squared_error')
+        gs = GridSearchCV(self.model, param_grid, refit=True, cv=3, scoring='neg_mean_squared_error', n_jobs=-1)
         gs.fit(X, y)
         
         # Print best parameters and score
@@ -42,9 +43,10 @@ class XGBRegressor_Tuner:
 
 # Wrapper for SVR
 class SVR_Tuner:
-    def __init__(self):
+    def __init__(self, input_dim):
         # Instantiate the SVR model
         self.model = SVR()
+        self.input_dim = input_dim
         
     def tune_hyperparameters(self, X, y):
         # Define hyperparameter grid
@@ -56,7 +58,7 @@ class SVR_Tuner:
         }
         
         # Use GridSearchCV to find the best hyperparameters
-        gs = GridSearchCV(self.model, param_grid, refit=True, cv=3, scoring='neg_mean_squared_error')
+        gs = GridSearchCV(self.model, param_grid, refit=True, cv=3, scoring='neg_mean_squared_error' , n_jobs=-1)
         gs.fit(X, y)
         
         # Print best parameters and score
