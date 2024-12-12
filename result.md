@@ -1561,4 +1561,6 @@ Best Score: -0.09719565820429625
 Test RMSE: 0.3080
 Test MAE: 0.2040
 Test MSE: 0.0949
-************************ <class 'ML_model.SVR_Tuner'> ************************
+************************ <class 'ML_model.XGBRegressor_Tuner'> ************************
+Best Parameters: {'colsample_bytree': 1.0, 'learning_rate': 0.2, 'max_depth': 10, 'n_estimators': 300, 'subsample': 0.6}
+Best Score: -0.04561541477839152

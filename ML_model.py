@@ -31,7 +31,7 @@ class XGBRegressor_Tuner:
         }
         
         # Use GridSearchCV to find the best hyperparameters
-        gs = GridSearchCV(self.model, param_grid, refit=True, cv=3, scoring='neg_mean_squared_error', n_jobs=-1)
+        gs = GridSearchCV(self.model, param_grid, refit=True, cv=3, scoring='neg_mean_squared_error')
         gs.fit(X, y)
         
         # Print best parameters and score
@@ -58,7 +58,7 @@ class SVR_Tuner:
         }
         
         # Use GridSearchCV to find the best hyperparameters
-        gs = GridSearchCV(self.model, param_grid, refit=True, cv=3, scoring='neg_mean_squared_error' , n_jobs=-1)
+        gs = GridSearchCV(self.model, param_grid, refit=True, cv=3, scoring='neg_mean_squared_error')
         gs.fit(X, y)
         
         # Print best parameters and score
