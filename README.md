@@ -19,6 +19,7 @@ This is the box plot of the 3 numerical columns. We could see that there are som
 * CNA
 * Gene Expression
 * Methylation
+
 We mapped these columns form text categories to numbers.
 #### Heatmap
 ![image](https://github.com/andrew76214/Kaggle_Genomics-of-Drug-Sensitivity-in-Cancer/blob/main/IMG/Heatmap.png)
