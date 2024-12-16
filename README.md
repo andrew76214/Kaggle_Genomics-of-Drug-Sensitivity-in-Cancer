@@ -1,6 +1,10 @@
 # Kaggle_Genomics-of-Drug-Sensitivity-in-Cancer
 Dataset url : https://www.kaggle.com/datasets/samiraalipour/genomics-of-drug-sensitivity-in-cancer-gdsc/data
-
+## Introduction
+*This dataset is from the GDSC project, which is a collaboration between the UK and the USA.
+*The project involves large-scale screening of human cancer cell lines with a wide range of anti-cancer drugs. In the experiments, cell viability was checked using the CellTiter-Glo test after 72 hours of drug treatment.
+*The GDSC dataset provides a comprehensive resource for studying the response of various cancer cell lines to a wide range of anti-cancer drugs.
+*The target variable in this dataset is LN_IC50
 ## Dataset EDA
 ### GDSC_DATASET.csv
 Origin: 242035 rows x 19 columns
