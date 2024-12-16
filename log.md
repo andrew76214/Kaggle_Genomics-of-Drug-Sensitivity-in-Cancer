@@ -4,36 +4,6 @@ Best Score: -0.17322727011780784
 Test RMSE: 0.3585
 Test MAE: 0.1707
 Test MSE: 0.1285
-************************ <class 'ML_model.CatBoost_Tuner'> ************************
-Error with model <class 'ML_model.CatBoost_Tuner'>: 
-All the 324 fits failed.
-It is very likely that your model is misconfigured.
-You can try to debug the error by setting error_score='raise'.
-
-Below are more details about the failures:
---------------------------------------------------------------------------------
-324 fits failed with the following error:
-Traceback (most recent call last):
-  File "/home/andrew-root/miniconda3/envs/pytorch/lib/python3.12/site-packages/sklearn/model_selection/_validation.py", line 888, in _fit_and_score
-    estimator.fit(X_train, y_train, **fit_params)
-  File "/home/andrew-root/miniconda3/envs/pytorch/lib/python3.12/site-packages/catboost/core.py", line 5873, in fit
-    return self._fit(X, y, cat_features, text_features, embedding_features, None, graph, sample_weight, None, None, None, None, baseline,
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/andrew-root/miniconda3/envs/pytorch/lib/python3.12/site-packages/catboost/core.py", line 2395, in _fit
-    train_params = self._prepare_train_params(
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/andrew-root/miniconda3/envs/pytorch/lib/python3.12/site-packages/catboost/core.py", line 2275, in _prepare_train_params
-    train_pool = _build_train_pool(X, y, cat_features, text_features, embedding_features, pairs, graph,
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/andrew-root/miniconda3/envs/pytorch/lib/python3.12/site-packages/catboost/core.py", line 1513, in _build_train_pool
-    train_pool = Pool(X, y, cat_features=cat_features, text_features=text_features, embedding_features=embedding_features, pairs=pairs, graph=graph, weight=sample_weight, group_id=group_id,
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/andrew-root/miniconda3/envs/pytorch/lib/python3.12/site-packages/catboost/core.py", line 768, in __init__
-    self._check_data_type(data)
-  File "/home/andrew-root/miniconda3/envs/pytorch/lib/python3.12/site-packages/catboost/core.py", line 925, in _check_data_type
-    raise CatBoostError(
-_catboost.CatBoostError: Invalid data type=<class 'torch.Tensor'>: data must be list(), np.ndarray(), DataFrame(), Series(), FeaturesData  scipy.sparse matrix or filename str() or pathlib.Path().
-
 ************************ <class 'ML_model.ElasticNet_Tuner'> ************************
 Best Parameters: {'alpha': 0.1, 'l1_ratio': 0.9, 'max_iter': 1000}
 Best Score: -4.111563349305744
