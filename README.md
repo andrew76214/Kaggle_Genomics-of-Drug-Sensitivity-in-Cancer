@@ -27,6 +27,8 @@ This is the box plot of the 3 numerical columns. We could see that there are som
 We mapped these columns form text categories to numbers.
 #### Heatmap
 ![image](https://github.com/andrew76214/Kaggle_Genomics-of-Drug-Sensitivity-in-Cancer/blob/main/IMG/Heatmap.png)
+## Training Pipeline
+![image](https://github.com/andrew76214/Kaggle_Genomics-of-Drug-Sensitivity-in-Cancer/blob/main/IMG/training_pipeline.png)
 ## Data Preprocess
 ### Step 1: dropna operation
 Apply the dropna operation to remove missing values and ensure data completeness.
