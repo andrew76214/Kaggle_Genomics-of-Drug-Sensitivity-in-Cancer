@@ -27,7 +27,13 @@ This is the box plot of the 3 numerical columns. We could see that there are som
 We mapped these columns form text categories to numbers.
 #### Heatmap
 ![image](https://github.com/andrew76214/Kaggle_Genomics-of-Drug-Sensitivity-in-Cancer/blob/main/IMG/Heatmap.png)
-
+## Data Preprocess
+### Step 1: dropna operation
+Apply the dropna operation to remove missing values and ensure data completeness.
+### Step 2: first merge
+Merge GDSC2_DATASET.csv with Cell_Lines_Details.xlsx to create a new dataset: merged_df.
+### Step 3: second merge
+Further merge merged_df with Compounds_annotation.csv to produce the final dataset: final_df.
 ## Evaluation
 We use MAE, MSE, RMSE
 
