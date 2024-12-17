@@ -28,20 +28,6 @@ class CNNTransformer(nn.Module):
 
         self.fc = nn.Linear(transformer_dim, 1)
 
-    '''def forward(self, x):
-        x = x.permute(0, 2, 1)
-        x = self.dropout(self.relu(self.bn1(self.conv1(x))))
-        x = self.dropout(self.relu(self.bn2(self.conv2(x))))
-        x = self.dropout(self.relu(self.bn3(self.conv3(x))))
-
-        x = x.permute(0, 2, 1)
-        x = self.input_layer(x)
-        x = self.transformer_encoder(x)
-
-        x_mean = x.mean(dim=1)
-        x_output = self.fc(x_mean)
-
-        return x_output'''
     def forward(self, x):
         # Ensure input has the right shape
         if x.dim() == 2:  # Add sequence dimension if missing
@@ -115,7 +101,7 @@ class CNNTransformer_Tuner:
         }
 
         # Use GridSearchCV to find the best hyperparameters
-        gs = GridSearchCV(self.model, param_grid, refit=True, cv=3, scoring='neg_mean_squared_error', n_jobs=-1)
+        gs = GridSearchCV(self.model, param_grid, refit=True, cv=3, scoring='neg_mean_squared_error')
         gs.fit(X, y)
 
         # Print best parameters and score
