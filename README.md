@@ -39,6 +39,41 @@ Further merge merged_df with Compounds_annotation.csv to produce the final datas
 ## Evaluation
 We use MAE, MSE, RMSE
 
+## Folder Architecture
+```
+Kaggle_Genomics-of-Drug-Sensitivity-in-Cancer/
+│
+├── README.md
+├── DatasetEDA.py
+├── LICENSE
+├── __pycache__
+│
+├── BERT/
+│   ├── __pycache__
+│   ├── main.ipynb
+│   ├── data_loader_BERT.py
+│   ├── model.py
+│   ├── config.py
+│   └── utils.py
+│
+├── DL/
+│   ├── main_DL.py
+│   ├── dataloader.py
+│   ├── MLP.py
+│   └── CNNTransformer.py
+│
+├── IMG/
+│   ├── GDSC_col_boxplot.png
+│   ├── Heatmap.png
+│   └── training_pipeline.png
+│
+└── ML/
+    ├── main_ML.py
+    ├── dataloader.py
+    ├── ML_model.py
+    └── tuning_log.md
+```
+
 ## Experimental Record
 ### Multi-Layer Preceptron, MLP
 12/03
@@ -49,3 +84,12 @@ Test MSE: 7.8361
 
 ### Deep Learning Model
 12/03
+
+---
+### Contributors
+
+<a href="https://github.com/andrew76214/Kaggle_Genomics-of-Drug-Sensitivity-in-Cancer/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=andrew76214/Kaggle_Genomics-of-Drug-Sensitivity-in-Cancer" />
+</a>
+
+Made with [contrib.rocks](https://contrib.rocks).
