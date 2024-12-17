@@ -1,17 +1,18 @@
 import pandas as pd
 import torch
-from transformers import BertTokenizer, RobertaTokenizer, DebertaTokenizer
+from transformers import BertTokenizer, RobertaTokenizer, DebertaTokenizer, DebertaV2Tokenizer
 from sklearn.model_selection import train_test_split
+from config import BERT_MODEL_NAME
 
 
 class DataLoader4BERT:
-    def __init__(self, gdsc_path, compounds_path, gdsc2_path, cell_lines_path, bert_model_name):
+    def __init__(self, gdsc_path, compounds_path, gdsc2_path, cell_lines_path):
         self.gdsc_path = gdsc_path
         self.compounds_path = compounds_path
         self.gdsc2_path = gdsc2_path
         self.cell_lines_path = cell_lines_path
-        self.bert_model_name = bert_model_name
-        self.tokenizer = self._initialize_tokenizer(bert_model_name)
+        self.bert_model_name = BERT_MODEL_NAME
+        self.tokenizer = self._initialize_tokenizer(self.bert_model_name)
         
         self.gdsc_dataset = None
         self.compounds_annotation = None
@@ -33,7 +34,7 @@ class DataLoader4BERT:
         if 'roberta' in model_name:
             return RobertaTokenizer.from_pretrained(model_name)
         elif 'deberta' in model_name:
-            return DebertaTokenizer.from_pretrained(model_name)
+            return DebertaV2Tokenizer.from_pretrained(model_name)
         else:  # Default to BertTokenizer
             return BertTokenizer.from_pretrained(model_name)
 
