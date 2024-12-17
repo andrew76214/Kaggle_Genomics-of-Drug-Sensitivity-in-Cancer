@@ -29,9 +29,6 @@ Test RMSE: 1.2684
 Test MAE: 0.9700
 Test MSE: 1.6088
 ************************ <class 'ML_model.LGBM_Tuner'> ************************
-[LightGBM] [Info] Total Bins 1728
-[LightGBM] [Info] Number of data points in the train set: 171060, number of used features: 611
-[LightGBM] [Info] Start training from score 2.777687
 Best Parameters: {'learning_rate': 0.1, 'max_depth': -1, 'n_estimators': 500, 'num_leaves': 70}
 Best Score: -0.02643431104263098
 Test RMSE: 0.1508
