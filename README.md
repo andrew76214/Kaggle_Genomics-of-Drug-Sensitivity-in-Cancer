@@ -132,14 +132,17 @@ flowchart TD
 - **Multilayer Perceptron (MLP)**  
 - **CNN + Transformer**  
 - **BERT-based Models**:  
-  - BERT  
-  - RoBERTa  
-  - DeBERTa  
+    - bert-base-uncased
+    - roberta-base
+    - microsoft/deberta-v3-base
+    - microsoft/deberta-v3-large
 
 ---
 
 ## Evaluation
 We use Mean Squared Error (MSE) as our performance metric.
+
+
 ![image](https://github.com/andrew76214/Kaggle_Genomics-of-Drug-Sensitivity-in-Cancer/blob/main/IMG/MSE.png)
 
 

@@ -3,7 +3,9 @@ NUM_EPOCHS = 20
 PREVIOUS_LOSS = 10
 BATCH_SIZE = 32
 
-BERT_MODEL_NAME = 'roberta-base'
+
+BERT_MODEL_NAME = 'bert-base-uncased'
+
 #
 # bert-base-uncased
 # roberta-base
