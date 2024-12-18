@@ -151,6 +151,8 @@ We use Mean Squared Error (MSE) as our performance metric.
 
 ## Experimental Record
 ### Machine Learning Model leaderboard
+- the tuning log is in /ML/tuning_log.md
+
 ![image](https://github.com/andrew76214/Kaggle_Genomics-of-Drug-Sensitivity-in-Cancer/blob/main/IMG/ML_leaderboard.png)
 
 ### Deep Learning Model leaderboard
