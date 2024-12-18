@@ -1,6 +1,6 @@
 import pandas as pd
 import torch
-from transformers import BertTokenizer, RobertaTokenizer, DebertaTokenizer, DebertaV2Tokenizer
+from transformers import BertTokenizer, RobertaTokenizer, DebertaV2Tokenizer
 from sklearn.model_selection import train_test_split
 from config import BERT_MODEL_NAME
 
@@ -31,7 +31,7 @@ class DataLoader4BERT:
         self.define_features_and_target()
         
     def _initialize_tokenizer(self, model_name):
-        if 'roberta' in model_name:
+        if 'roberta-base' in model_name:
             return RobertaTokenizer.from_pretrained(model_name)
         elif 'deberta' in model_name:
             return DebertaV2Tokenizer.from_pretrained(model_name)
@@ -71,6 +71,7 @@ class DataLoader4BERT:
 
         X_text = self.final_df[text_features].fillna('')
         text_inputs = X_text.apply(lambda x: ' '.join(x), axis=1).tolist()
+        
         tokenized = self.tokenizer(text_inputs, padding=True, truncation=True, return_tensors="pt", max_length=16)
 
         if 'LN_IC50' not in self.final_df.columns:
