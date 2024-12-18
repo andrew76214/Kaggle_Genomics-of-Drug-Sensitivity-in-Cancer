@@ -19,6 +19,7 @@ Kaggle_Genomics-of-Drug-Sensitivity-in-Cancer/
 │   └── utils.py
 │
 ├── DL/
+│   ├── __pycache__
 │   ├── main_DL.py
 │   ├── dataloader.py
 │   ├── MLP.py
@@ -29,9 +30,11 @@ Kaggle_Genomics-of-Drug-Sensitivity-in-Cancer/
 │   ├── Heatmap.png
 │   ├── MSE.png
 │   ├── ML_leaderboard.png
+│   ├── DL_leaderboard.png
 │   └── training_pipeline.png
 │
 └── ML/
+    ├── __pycache__
     ├── main_ML.py
     ├── dataloader.py
     ├── ML_model.py
@@ -149,6 +152,9 @@ We use Mean Squared Error (MSE) as our performance metric.
 ## Experimental Record
 ### Machine Learning Model leaderboard
 ![image](https://github.com/andrew76214/Kaggle_Genomics-of-Drug-Sensitivity-in-Cancer/blob/main/IMG/ML_leaderboard.png)
+
+### Deep Learning Model leaderboard
+![image](https://github.com/andrew76214/Kaggle_Genomics-of-Drug-Sensitivity-in-Cancer/blob/main/IMG/DL_leaderboard.png)
 
 ---
 ### Contributors
