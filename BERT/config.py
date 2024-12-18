@@ -3,7 +3,7 @@ NUM_EPOCHS = 20
 PREVIOUS_LOSS = 10
 BATCH_SIZE = 32
 
-BERT_MODEL_NAME = 'microsoft/deberta-v3-large'
+BERT_MODEL_NAME = 'roberta-base'
 #
 # bert-base-uncased
 # roberta-base

@@ -55,14 +55,14 @@ def evaluate(model, input_ids, attention_mask, numeric_features, targets, batch_
         error_message = str(e)
         print(f"{error_message}")
         
-    # 將結果寫入 CSV 檔案
+    '''# 將結果寫入 CSV 檔案
     csv_filename = "BERT_results.csv"
     with open(csv_filename, mode="w", newline="", encoding="utf-8") as file:
         writer = csv.DictWriter(file, fieldnames=["mae", "mse"])
         writer.writeheader()
         writer.writerows(experimental_result)
 
-    print(f"CSV file '{csv_filename}' has been created!")
+    print(f"CSV file '{csv_filename}' has been created!")'''
     
     return mae, mse
 
