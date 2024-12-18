@@ -3,7 +3,9 @@
 
 [Our slides](https://github.com/andrew76214/Kaggle_Genomics-of-Drug-Sensitivity-in-Cancer/blob/main/slides.pdf)
 
-## Folder Architecture
+<details>
+  <summary>Folder Architecture</summary>
+
 ```
 Kaggle_Genomics-of-Drug-Sensitivity-in-Cancer/
 │
@@ -43,7 +45,7 @@ Kaggle_Genomics-of-Drug-Sensitivity-in-Cancer/
     ├── ML_model.py
     └── tuning_log.md
 ```
-
+</details>
 
 ## Introduction
 The **Genomics of Drug Sensitivity in Cancer (GDSC)** project, a collaboration between the UK and USA, aims to systematically evaluate the sensitivity of human cancer cell lines to anti-cancer drugs. Key characteristics of the dataset include:  
