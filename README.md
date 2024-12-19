@@ -61,17 +61,14 @@ The **Genomics of Drug Sensitivity in Cancer (GDSC)** project, a collaboration b
 - **GDSC_DATASET.csv**: Combined dataset merging the above three files.
 
 ## Dataset EDA
-### GDSC_DATASET.csv
-Origin: 242035 rows x 19 columns
-#### Numerical Columns Analysis
+### Numerical Columns Analysis
 * **LN_IC50**: The primary target variable.
 * AUC
 * Z_SCORE
 
-![image](https://github.com/andrew76214/Kaggle_Genomics-of-Drug-Sensitivity-in-Cancer/blob/main/IMG/GDSC_col_boxplot.png)
-
-This is the box plot of the 3 numerical columns. We could see that there are some outliers, so we removed the data outside the 3 times of IQR.
-#### Categorical Columns Analysis
+![image](https://github.com/andrew76214/Kaggle_Genomics-of-Drug-Sensitivity-in-Cancer/blob/main/IMG/GDSC2_col_boxplot.png)
+![image](https://github.com/andrew76214/Kaggle_Genomics-of-Drug-Sensitivity-in-Cancer/blob/main/IMG/GDSC2_col_boxplot2.png)
+### Categorical Columns Analysis
 * Microsatellite instability Status (MSI)
 * Screen Medium
 * Growth Properties
@@ -79,10 +76,11 @@ This is the box plot of the 3 numerical columns. We could see that there are som
 * Gene Expression
 * Methylation
 
+![image](https://github.com/andrew76214/Kaggle_Genomics-of-Drug-Sensitivity-in-Cancer/blob/main/IMG/GDSC_col_barplot.png)
 We mapped these columns form text categories to numbers.
 #### Heatmap
-![image](https://github.com/andrew76214/Kaggle_Genomics-of-Drug-Sensitivity-in-Cancer/blob/main/IMG/Heatmap.png)
-
+![image](https://github.com/andrew76214/Kaggle_Genomics-of-Drug-Sensitivity-in-Cancer/blob/main/IMG/Heatmap_num.png)
+![image](https://github.com/andrew76214/Kaggle_Genomics-of-Drug-Sensitivity-in-Cancer/blob/main/IMG/Heatmap_cat.png)
 ## Data Preprocessing  
 
 1. **Step 1: Handling Missing Values**  
