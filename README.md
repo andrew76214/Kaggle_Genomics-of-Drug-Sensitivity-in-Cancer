@@ -1,51 +1,24 @@
 # Kaggle_Genomics-of-Drug-Sensitivity-in-Cancer
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Python Version](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)
+
 [Dataset url](https://www.kaggle.com/datasets/samiraalipour/genomics-of-drug-sensitivity-in-cancer-gdsc/data)
 
 [Our slides](https://github.com/andrew76214/Kaggle_Genomics-of-Drug-Sensitivity-in-Cancer/blob/main/slides.pdf)
 
-<details>
-  <summary>Folder Architecture</summary>
-
-```
-Kaggle_Genomics-of-Drug-Sensitivity-in-Cancer/
-│
-├── README.md
-├── DatasetEDA.py
-├── slides.pdf
-├── LICENSE
-├── __pycache__
-│
-├── BERT/
-│   ├── __pycache__
-│   ├── main.ipynb
-│   ├── data_loader_BERT.py
-│   ├── model.py
-│   ├── config.py
-│   └── utils.py
-│
-├── DL/
-│   ├── __pycache__
-│   ├── main_DL.py
-│   ├── dataloader.py
-│   ├── MLP.py
-│   └── CNNTransformer.py
-│
-├── IMG/
-│   ├── GDSC_col_boxplot.png
-│   ├── Heatmap.png
-│   ├── MSE.png
-│   ├── ML_leaderboard.png
-│   ├── DL_leaderboard.png
-│   └── training_pipeline.png
-│
-└── ML/
-    ├── __pycache__
-    ├── main_ML.py
-    ├── dataloader.py
-    ├── ML_model.py
-    └── tuning_log.md
-```
-</details>
+## Table of Contents
+- [Introduction](#introduction)
+- [Dataset Overview](#dataset-overview)
+- [Dataset EDA](#dataset-eda)
+- [Data Preprocessing](#data-preprocessing)
+- [Pipeline](#pipeline)
+- [Models Implemented](#models-implemented)
+- [Evaluation](#evaluation)
+- [Experimental Record](#experimental-record)
+- [Installation and Usage](#installation-and-usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contributors](#contributors)
 
 ## Introduction
 The **Genomics of Drug Sensitivity in Cancer (GDSC)** project, a collaboration between the UK and USA, aims to systematically evaluate the sensitivity of human cancer cell lines to anti-cancer drugs. Key characteristics of the dataset include:  
@@ -66,8 +39,11 @@ The **Genomics of Drug Sensitivity in Cancer (GDSC)** project, a collaboration b
 * AUC
 * Z_SCORE
 
-![image](https://github.com/andrew76214/Kaggle_Genomics-of-Drug-Sensitivity-in-Cancer/blob/main/IMG/GDSC2_col_boxplot.png)
-![image](https://github.com/andrew76214/Kaggle_Genomics-of-Drug-Sensitivity-in-Cancer/blob/main/IMG/GDSC2_col_boxplot2.png)
+<div align="center">
+  <img src="https://github.com/andrew76214/Kaggle_Genomics-of-Drug-Sensitivity-in-Cancer/blob/main/IMG/GDSC2_col_boxplot.png" alt="Numerical Columns Analysis"/>
+  <img src="https://github.com/andrew76214/Kaggle_Genomics-of-Drug-Sensitivity-in-Cancer/blob/main/IMG/GDSC2_col_boxplot2.png" alt="Numerical Columns Analysis 2"/>
+</div>
+
 ### Categorical Columns Analysis
 * Microsatellite instability Status (MSI)
 * Screen Medium
@@ -76,11 +52,17 @@ The **Genomics of Drug Sensitivity in Cancer (GDSC)** project, a collaboration b
 * Gene Expression
 * Methylation
 
-![image](https://github.com/andrew76214/Kaggle_Genomics-of-Drug-Sensitivity-in-Cancer/blob/main/IMG/GDSC_col_barplot.png)
-We mapped these columns form text categories to numbers.
+<div align="center">
+  <img src="https://github.com/andrew76214/Kaggle_Genomics-of-Drug-Sensitivity-in-Cancer/blob/main/IMG/GDSC_col_barplot.png" alt="Categorical Columns Analysis"/>
+</div>
+
+We mapped these columns from text categories to numbers.
 #### Heatmap
-![image](https://github.com/andrew76214/Kaggle_Genomics-of-Drug-Sensitivity-in-Cancer/blob/main/IMG/Heatmap_num.png)
-![image](https://github.com/andrew76214/Kaggle_Genomics-of-Drug-Sensitivity-in-Cancer/blob/main/IMG/Heatmap_cat.png)
+<div align="center">
+  <img src="https://github.com/andrew76214/Kaggle_Genomics-of-Drug-Sensitivity-in-Cancer/blob/main/IMG/Heatmap_num.png" alt="Heatmap Numerical"/>
+  <img src="https://github.com/andrew76214/Kaggle_Genomics-of-Drug-Sensitivity-in-Cancer/blob/main/IMG/Heatmap_cat.png" alt="Heatmap Categorical"/>
+</div>
+
 ## Data Preprocessing  
 
 1. **Step 1: Handling Missing Values**  
@@ -148,24 +130,78 @@ flowchart TD
 ## Evaluation
 We use Mean Squared Error (MSE) as our performance metric.
 
-
-![image](https://github.com/andrew76214/Kaggle_Genomics-of-Drug-Sensitivity-in-Cancer/blob/main/IMG/MSE.png)
-
+<div align="center">
+  <img src="https://github.com/andrew76214/Kaggle_Genomics-of-Drug-Sensitivity-in-Cancer/blob/main/IMG/MSE.png" alt="Evaluation"/>
+</div>
 
 ## Experimental Record
 ### Machine Learning Model leaderboard
 - the tuning log is in /ML/tuning_log.md
 
-![image](https://github.com/andrew76214/Kaggle_Genomics-of-Drug-Sensitivity-in-Cancer/blob/main/IMG/ML_leaderboard.png)
+<div align="center">
+  <img src="https://github.com/andrew76214/Kaggle_Genomics-of-Drug-Sensitivity-in-Cancer/blob/main/IMG/ML_leaderboard.png" alt="ML Leaderboard"/>
+</div>
 
 ### Deep Learning Model leaderboard
-![image](https://github.com/andrew76214/Kaggle_Genomics-of-Drug-Sensitivity-in-Cancer/blob/main/IMG/DL_leaderboard.png)
+<div align="center">
+  <img src="https://github.com/andrew76214/Kaggle_Genomics-of-Drug-Sensitivity-in-Cancer/blob/main/IMG/DL_leaderboard.png" alt="DL Leaderboard"/>
+</div>
 
 ---
-### Contributors
+## Installation and Usage
 
-<a href="https://github.com/andrew76214/Kaggle_Genomics-of-Drug-Sensitivity-in-Cancer/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=andrew76214/Kaggle_Genomics-of-Drug-Sensitivity-in-Cancer" />
-</a>
+### Prerequisites
+- Python 3.8+
+- Required Python libraries listed in `requirements.txt`.
+
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/andrew76214/Kaggle_Genomics-of-Drug-Sensitivity-in-Cancer.git
+   cd Kaggle_Genomics-of-Drug-Sensitivity-in-Cancer
+   ```
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+### Usage
+Run the EDA script:
+```bash
+python DatasetEDA.py
+```
+Run a specific machine learning or deep learning model:
+```bash
+python ML/main_ML.py
+python DL/main_DL.py
+```
+
+## Contributing
+Contributions are welcome! Please follow these steps:
+1. Fork the repository.
+2. Create a new branch:
+   ```bash
+   git checkout -b feature-branch
+   ```
+3. Commit your changes:
+   ```bash
+   git commit -m "Description of changes"
+   ```
+4. Push to the branch:
+   ```bash
+   git push origin feature-branch
+   ```
+5. Submit a pull request.
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Contributors
+
+<div align="center">
+  <a href="https://github.com/andrew76214/Kaggle_Genomics-of-Drug-Sensitivity-in-Cancer/graphs/contributors">
+    <img src="https://contrib.rocks/image?repo=andrew76214/Kaggle_Genomics-of-Drug-Sensitivity-in-Cancer" alt="Contributors"/>
+  </a>
+</div>
 
 Made with [contrib.rocks](https://contrib.rocks).
